@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oUp-KN-5Hp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rate mal-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="test" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,6 +20,7 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="onclick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GR5-Pd-mVL"/>
+                                    <segue destination="9hQ-W2-SH1" kind="show" identifier="Detail" id="13T-vj-Ks0"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zub-JN-NCg">
@@ -31,6 +31,7 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ngu-Yc-bzw">
                                 <rect key="frame" x="191" y="487" width="32" height="34"/>
+                                <color key="textColor" red="0.88184390488625686" green="0.94478327527488626" blue="0.69667663674398494" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -40,7 +41,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.92473465204238892" green="0.89821606874465942" blue="0.61640411615371704" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ymz-69-opf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JLT-og-XZl"/>
                             <constraint firstItem="zub-JN-NCg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Yk3-UX-wP1"/>
@@ -50,6 +51,7 @@
                             <constraint firstItem="ymz-69-opf" firstAttribute="top" secondItem="zub-JN-NCg" secondAttribute="bottom" constant="24" id="vne-J8-t25"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Rate mal" id="fMq-ro-T4C"/>
                     <connections>
                         <outlet property="TextField" destination="zub-JN-NCg" id="iX0-1b-KoK"/>
                         <outlet property="buttonGuess" destination="ymz-69-opf" id="Eez-Go-oec"/>
@@ -59,12 +61,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="30" y="89"/>
+            <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="4O9-F2-48q">
+            <objects>
+                <viewController id="9hQ-W2-SH1" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BaG-YE-Qge">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eIy-w4-udi"/>
+                        <color key="backgroundColor" red="0.71096163988113403" green="0.92234021425247192" blue="0.9309735894203186" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Detail" id="YF8-cF-kC0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kUR-gY-NIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="98"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GZJ-1O-cSc">
+            <objects>
+                <navigationController id="oUp-KN-5Hp" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sr7-sO-FSn">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OKQ-jK-t2b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r4t-fC-eIn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-906" y="42"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

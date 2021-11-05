@@ -52,6 +52,7 @@ class ViewController: UIViewController {
             model.counterOfTrys+=1
         }
         
+              
         
     }
     
@@ -60,8 +61,25 @@ class ViewController: UIViewController {
         return model.compare(guess: guess)
     }
     
+    override func
+    shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        print("nope")
+
+        guessedNumber = compare(guessedString: textField.text!)
+        switch guessedNumber{
+        case -1:
+            return false
+        case 1:
+            return false
+        default:
+            return true
+        
+    }
+    
     
 
+
+}
 
 }
 
