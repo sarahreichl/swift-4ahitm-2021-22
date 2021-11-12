@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         model.numberToGuess = Int(arc4random_uniform(100));
+        print(model.numberToGuess);
         label.text = "Try to guess the number!"
         
     }
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
     
     @IBAction func onclick(_ sender: UIButton) {
         // Check for input not nill
+        
         if(Optional(guessedNumber) != nil){
             print("")
             guessedNumber = compare(guessedString: textField.text!)
